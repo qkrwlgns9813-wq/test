@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쑥쑥! 방학 자기주도학습 플래너</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for a friendly look -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Gaegu:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <span class="badge">📖 즐거운 방학 계획</span>
+                <h1>쑥쑥! 자기주도학습 플래너</h1>
+                <p>나만의 공부 속도에 맞춰 방학 계획을 세워봐요!</p>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Step 1: 기간 설정 -->
+            <section class="planner-card setup-section">
+                <div class="section-title">
+                    <span class="icon">📅</span>
+                    <h2>1. 방학 기간 설정하기</h2>
+                </div>
+                <div class="input-group-row">
+                    <div class="input-field">
+                        <label for="start-date">시작일</label>
+                        <input type="date" id="start-date">
+                    </div>
+                    <div class="input-field">
+                        <label for="end-date">종료일</label>
+                        <input type="date" id="end-date">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: 과목 및 교과서 정보 -->
+            <section class="planner-card subject-section">
+                <div class="section-title">
+                    <span class="icon">📚</span>
+                    <h2>2. 공부할 과목과 범위 정하기</h2>
+                </div>
+                <div id="subject-list" class="subject-list">
+                    <!-- Subject items will be added here -->
+                </div>
+                <button type="button" id="add-subject-btn" class="btn-secondary">+ 과목 추가하기</button>
+            </section>
+
+            <!-- Step 3: 실행 버튼 -->
+            <div class="action-area">
+                <button id="generate-btn" class="btn-primary">✨ 진도표 및 시간표 만들기</button>
+            </div>
+
+            <!-- Result Section: 시간표 & 진도표 -->
+            <section id="result-section" class="result-section" style="display: none;">
+                <div class="tabs">
+                    <button class="tab-btn" data-tab="progress">📝 일별 진도표</button>
+                    <button class="tab-btn active" data-tab="calendar">�️ 학습 캘린더</button>
+                    <button class="tab-btn" data-tab="timetable">� 주간 시간표</button>
+                </div>
+
+                <div id="calendar" class="tab-content active">
+                    <div class="planner-card">
+                        <h3>방학 학습 캘린더</h3>
+                        <div id="calendar-view" class="calendar-grid">
+                            <!-- Calendar generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="timetable" class="tab-content">
+                    <div class="planner-card">
+                        <h3>방학 생활 계획표</h3>
+                        <div class="timetable-grid" id="timetable-grid">
+                            <!-- Timetable generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress" class="tab-content">
+                    <div class="planner-card">
+                        <h3>일일 학습 진도표</h3>
+                        <div class="progress-container" id="progress-container">
+                            <!-- Progress rows generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="print-area">
+                    <button onclick="window.print()" class="btn-print">🖨️ 내 계획표 출력하기</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 초등 방학 플래너 | 자기주도학습을 응원합니다! 🌟</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
